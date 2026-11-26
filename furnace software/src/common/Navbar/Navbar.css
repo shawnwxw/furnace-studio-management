@@ -1,0 +1,92 @@
+.navbar {
+  background: #252629;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+}
+
+.navbar__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1232px;
+  margin: 0 auto;
+}
+
+.navbar__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar__content > .info-tooltip-trigger {
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.navbar__backup-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.navbar a {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.navbar a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: currentColor;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  color: var(--orange);
+}
+
+.navbar a[aria-current] {
+  color: var(--orange);
+}
+
+.navbar a:hover::after,
+.navbar a:focus-visible::after,
+.navbar a[aria-current]::after {
+  transform: scaleX(1);
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar a,
+  .navbar a::after {
+    transition: none;
+  }
+
+}

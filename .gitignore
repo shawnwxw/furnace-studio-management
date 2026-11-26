@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data stores, uploads, and product images.
+# Copy the *.example.json files in furnace api/data/ before the first run.
+# Do not commit live JSON, product folders, or uploaded pictures.
+furnace api/data/**
+!furnace api/data/*.example.json
+!furnace api/data/product/
+!furnace api/data/product/*.example.json
+furnace software/data/
+
+# Backups and archives
+*.zip
+backups/
+backup/
+
+# Atomic-write temps and staged product uploads
+*.tmp
+.upload-*/
+.removed-*/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

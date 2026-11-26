@@ -1,0 +1,459 @@
+.plan-page {
+  width: 100%;
+}
+
+.plan-header-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  max-width: 100%;
+}
+
+.plan-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 420px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.plan-nav a {
+  padding: 8px 12px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: center;
+  text-decoration: none;
+}
+
+.plan-nav a:first-child {
+  border-radius: 7px 0 0 7px;
+}
+
+.plan-nav a + a {
+  border-left: 1px solid var(--border);
+}
+
+.plan-nav a:last-child {
+  border-radius: 0 7px 7px 0;
+}
+
+.plan-nav a:hover {
+  background: var(--orange-soft);
+}
+
+.plan-nav a[aria-current="page"] {
+  background: var(--orange);
+  color: var(--background);
+}
+
+.plan-nav a:focus-visible {
+  position: relative;
+  outline: 2px solid var(--text);
+  outline-offset: -3px;
+}
+
+.task .plan-item[data-priority] {
+  border-left: 5px solid var(--priority-color);
+}
+
+.task .plan-item[data-subtask="true"] {
+  margin-inline-start: clamp(12px, 4vw, 32px);
+}
+
+.task .plan-item[data-drop-position="before"] {
+  box-shadow: 0 -3px var(--orange);
+}
+
+.task .plan-item[data-drop-position="after"] {
+  box-shadow: 0 3px var(--orange);
+}
+
+.task button.task-drag {
+  padding: 4px 8px;
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: grab;
+}
+
+.task button.task-drag[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.task [data-priority="high"] {
+  --priority-color: #d2042d;
+}
+
+.task [data-priority="mid"] {
+  --priority-color: #ffdf40;
+}
+
+.task [data-priority="low"] {
+  --priority-color: #87ceeb;
+}
+
+.task .plan-item-name {
+  overflow-wrap: anywhere;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.task-note {
+  white-space: pre-wrap;
+}
+
+.plan-form {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.plan-form h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.plan-form label {
+  font-weight: 600;
+}
+
+.plan-form input,
+.plan-form textarea,
+.plan-form select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--background);
+  color: var(--text);
+}
+
+.plan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.plan-form .plan-actions {
+  margin-top: 8px;
+}
+
+.plan-page button {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.plan-page button:hover {
+  background: var(--orange-soft);
+  border-color: var(--orange);
+}
+
+.plan-page .plan-primary {
+  background: var(--orange);
+  color: #202124;
+  border-color: var(--orange);
+}
+
+.plan-page .plan-primary:hover {
+  background: #ff7958;
+}
+
+.plan-page button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.plan-page :is(button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.plan-page .plan-remove {
+  color: #ff9278;
+}
+
+.task button.task-action-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.task button.task-action-icon:enabled:not(.task-progress-info):is(:hover, :focus-visible) {
+  border-color: var(--orange);
+  background: var(--orange-soft);
+}
+
+.plan-page button.schedule-remove {
+  display: inline-grid;
+  place-items: center;
+}
+
+.task-action-icon svg,
+.schedule-remove svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.task-subtask-toggle[aria-expanded="false"] svg {
+  transform: rotate(-90deg);
+}
+
+.task-progress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.task button.task-progress-info {
+  width: 24px;
+  border: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.task button.task-progress-info:hover {
+  color: var(--orange);
+}
+
+.task-progress-tip {
+  display: none;
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: 100%;
+  z-index: 1;
+  width: max-content;
+  max-width: 12rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 4px 12px #0005;
+  font-size: 0.8rem;
+}
+
+.task-progress:is(:hover, :focus-within) .task-progress-tip {
+  display: block;
+}
+
+.plan-summary {
+  color: var(--muted);
+}
+
+.plan-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.plan-item-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 220px;
+}
+
+label.plan-item-content {
+  cursor: pointer;
+}
+
+.task-completion-tick {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .plan-item[data-task-motion="leaving"] {
+    animation: task-slide-out 240ms ease-in both;
+  }
+
+  .plan-item[data-task-motion="checking"] {
+    animation: task-slide-check 240ms ease-out;
+  }
+}
+
+@keyframes task-slide-out {
+  to {
+    transform: translateX(2rem);
+    opacity: 0;
+  }
+}
+
+@keyframes task-slide-check {
+  45% {
+    transform: translateX(0.4rem);
+  }
+}
+
+.task-main-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-form .task-main-option input {
+  width: auto;
+  accent-color: var(--orange);
+}
+
+.plan-item-content input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: var(--orange);
+}
+
+.plan-item-content > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.plan-item-name {
+  display: block;
+  font-weight: 600;
+}
+
+.plan-item time {
+  display: block;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.plan-item--completed .plan-item-name {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.plan-form textarea {
+  resize: vertical;
+}
+
+.plan-item-note {
+  display: block;
+  white-space: pre-wrap;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.plan-dialog {
+  width: min(540px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 24px 80px #0008;
+}
+
+.plan-dialog::backdrop {
+  background: #000a;
+}
+
+.plan-dialog .plan-form {
+  border: 0;
+}
+
+body:has(.plan-dialog[open]) {
+  overflow: hidden;
+}
+
+.plan-colors {
+  margin: 6px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 0;
+}
+
+.plan-colors legend {
+  padding: 0 6px;
+  font-weight: 600;
+}
+
+.plan-color-options {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px 6px;
+}
+
+.plan-color-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.plan-color-option input {
+  position: absolute;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+}
+
+.plan-color-option > span:first-of-type {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #202124;
+}
+
+.plan-color-option input:checked + span {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.plan-color-option input:focus-visible + span {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+

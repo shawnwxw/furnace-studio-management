@@ -1,0 +1,344 @@
+.page-header.home-heading {
+  align-items: baseline;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.home-clock {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 2px 0 2px 12px;
+  border-left: 2px solid var(--orange);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-clock-time {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.home-dashboard {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-height: 0;
+}
+
+.home-dashboard > .panel-frame {
+  backdrop-filter: blur(12px);
+}
+
+.home-widget {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  min-width: 0;
+  min-height: 0;
+  padding: 16px;
+}
+
+.home-widget-content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.home-widget-content:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.home-widget-content > .plan-page,
+.home-widget-content > .plan-page > div:has(> .plan-calendar) {
+  height: 100%;
+}
+
+.home-widget-content .plan-calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 0;
+  border: 0;
+  background: transparent;
+}
+
+.home-widget-content .plan-calendar-scroll {
+  flex: 1;
+  min-height: 0;
+}
+
+.home-widget-content .plan-calendar-grid--two-days {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.home-widget-content .calendar-week {
+  flex: 1;
+}
+
+.home-widget-content .calendar-cell {
+  border-bottom: 0;
+}
+
+.home-widget-content .calendar-week-bars .calendar-bar {
+  max-width: calc(100% - 20px);
+  margin-inline: 10px;
+}
+
+.home-widget-switch {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.home-widget-switch button {
+  padding: 8px 12px;
+  border: 0;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.home-widget-switch button:first-of-type {
+  border-radius: 7px 0 0 7px;
+}
+
+.home-widget-switch button + button {
+  border-left: 1px solid var(--border);
+  border-radius: 0 7px 7px 0;
+}
+
+.home-widget-switch button:hover {
+  background: var(--orange-soft);
+}
+
+.home-widget-switch button[aria-pressed="true"] {
+  background: var(--orange);
+  color: var(--background);
+}
+
+.home-widget-switch button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: -3px;
+}
+
+.home-calendar-info {
+  margin-inline-start: 2px;
+  font-size: 0.85rem;
+}
+
+.home-calendar-tab[aria-pressed="false"]:is(:hover, :focus-visible) .home-calendar-info {
+  color: var(--orange);
+}
+
+.home-calendar-tip {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 6px);
+  right: 0;
+  max-width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--surface-raised);
+  box-shadow: 0 4px 12px #0006;
+  color: var(--text);
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-calendar-tab:is(:hover, :focus-visible) + .home-calendar-tip {
+  opacity: 1;
+}
+
+.home-task-items {
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.home-task-progress {
+  margin-inline-start: auto;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.home-task-items .plan-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2px;
+  padding: 8px 12px;
+  overflow-wrap: anywhere;
+}
+
+.home-products,
+.home-financial {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+}
+
+.home-products {
+  grid-row: 2;
+}
+
+.home-financial {
+  grid-row: 1;
+}
+
+.home-financial > header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.home-financial h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.home-financial .finance-stat-grid {
+  flex: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  margin: 0;
+}
+
+.home-financial .finance-stat-card {
+  display: grid;
+  align-content: center;
+}
+
+.home-products > h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.home-product-list {
+  display: grid;
+  flex: 1;
+  grid-auto-rows: minmax(82px, 1fr);
+  gap: 8px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.home-product-list:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.home-product-list > li {
+  min-height: 0;
+}
+
+.home-product-card {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: minmax(0, 48%) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--product-card-background);
+  color: var(--text);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.home-product-card:hover,
+.home-product-card:focus-visible {
+  border-color: var(--orange);
+}
+
+.home-product-card:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: -2px;
+}
+
+.home-product-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: var(--background);
+  object-fit: contain;
+}
+
+.home-product-summary {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.home-product-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.product-stock.home-product-stock {
+  justify-self: start;
+  align-items: baseline;
+  flex-wrap: wrap;
+  max-width: 100%;
+  border-radius: 999px;
+}
+
+@media (max-width: 700px) {
+  #root:has(.home-page) {
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .home-page.page-frame {
+    height: auto;
+  }
+
+  .home-dashboard {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(320px, 60dvh) minmax(140px, auto) minmax(220px, 40dvh);
+  }
+
+  .home-widget {
+    grid-row: 1;
+  }
+
+  .home-products,
+  .home-financial {
+    grid-column: 1;
+  }
+
+  .home-financial {
+    grid-row: 2;
+  }
+
+  .home-products {
+    grid-row: 3;
+  }
+}

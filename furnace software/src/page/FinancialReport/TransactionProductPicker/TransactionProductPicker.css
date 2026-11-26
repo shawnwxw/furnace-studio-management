@@ -1,0 +1,33 @@
+.transaction-product-picker {
+  min-width: 0;
+}
+
+.transaction-product-picker summary {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.transaction-product-options {
+  max-block-size: 9rem;
+  overflow: auto;
+  padding: 6px 10px;
+}
+
+.finance-entry .transaction-product-options label {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.transaction-product-options input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--orange);
+}

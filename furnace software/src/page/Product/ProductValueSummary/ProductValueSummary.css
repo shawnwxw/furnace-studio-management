@@ -1,0 +1,40 @@
+.product-unit-summary {
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.product-unit-summary-header,
+.product-unit-summary dl div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.product-unit-summary-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.product-unit-summary-header {
+  align-items: center;
+}
+
+.product-unit-summary dl {
+  display: grid;
+  gap: 5px;
+  margin: 8px 0 0;
+  font-size: 0.875rem;
+}
+
+.product-unit-summary dt {
+  color: var(--muted);
+}
+
+.product-unit-summary dd {
+  margin: 0;
+  white-space: nowrap;
+}

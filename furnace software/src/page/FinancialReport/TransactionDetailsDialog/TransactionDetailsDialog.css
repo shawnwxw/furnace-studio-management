@@ -1,0 +1,40 @@
+.transaction-details {
+  padding: 16px 20px;
+}
+
+.transaction-details header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.transaction-details h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.transaction-details dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px 16px;
+  margin: 16px 0 0;
+}
+
+.transaction-details dt {
+  color: var(--muted);
+}
+
+.transaction-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.transaction-details ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+}
+
+.transaction-note {
+  white-space: pre-wrap;
+}

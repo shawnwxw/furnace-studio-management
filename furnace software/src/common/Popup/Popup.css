@@ -1,0 +1,60 @@
+.app-popup {
+  width: min(440px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 20px 60px #0009;
+  overflow-wrap: anywhere;
+}
+
+.app-popup::backdrop {
+  background: #0009;
+}
+
+body:has(.app-popup[open]) {
+  overflow: hidden;
+}
+
+.app-popup h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.app-popup p {
+  margin: 8px 0 18px;
+}
+
+.app-popup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.app-popup-actions button {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.app-popup-actions button:is(:hover, :focus-visible) {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.app-popup-actions .app-popup-primary {
+  background: var(--orange);
+  color: #202124;
+}
+
+.app-popup-actions .app-popup-danger {
+  background: #8e2b22;
+  color: #fff;
+}

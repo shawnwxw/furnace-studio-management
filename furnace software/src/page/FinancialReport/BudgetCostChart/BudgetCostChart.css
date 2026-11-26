@@ -1,0 +1,40 @@
+.budget-cost-chart {
+  margin: 12px 0;
+}
+
+.budget-cost-track {
+  display: flex;
+  height: 16px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: var(--background);
+}
+
+.budget-cost-track > span {
+  flex-basis: 0;
+}
+
+.budget-cost-budget {
+  background: #68b6eb;
+}
+
+.budget-cost-cost {
+  background: var(--orange);
+}
+
+.budget-cost-chart figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.budget-cost-chart figcaption i {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  margin-inline-end: 6px;
+  border-radius: 50%;
+}

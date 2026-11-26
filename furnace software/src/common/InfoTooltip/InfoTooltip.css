@@ -1,0 +1,29 @@
+.info-tooltip-trigger[type="button"] {
+  padding: 0 2px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: help;
+}
+
+.info-tooltip-trigger[type="button"]:is(:hover, :focus) {
+  color: var(--orange);
+}
+
+.info-tooltip-text {
+  position: fixed;
+  z-index: 101;
+  transform: translate(-50%, -100%);
+  width: max-content;
+  max-width: min(18rem, calc(100vw - 24px));
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--surface-raised);
+  color: var(--text);
+  box-shadow: 0 4px 12px #0006;
+  font-size: 0.8rem;
+  font-weight: normal;
+  white-space: pre-line;
+  pointer-events: none;
+}
